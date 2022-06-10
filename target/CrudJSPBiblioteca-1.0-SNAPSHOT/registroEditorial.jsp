@@ -129,7 +129,7 @@
                                 Gestionar los libros
                                 <small>
                                     <i class="ace-icon fa fa-angle-double-right"></i>
-                                    Registro de Categorias
+                                    Registro de Editoriales
                                 </small>
                             </h1>
                         </div><!-- /.page-header -->
