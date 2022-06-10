@@ -23,18 +23,15 @@ public class CategoriaDao {
         
         
         try {
-            String sql = "INSERT INTO categorias (nombre) VALUES ('?');";
+            String sql = "INSERT INTO categorias (nombre) VALUES (?);";
             Connection con = Conexion.conectar();
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, categoria.getNombre());
-            /*
             if (st.executeUpdate() > 0) {
                 return true;
             } else {
                 return false;
             }
-            */
-            return st.executeUpdate() > 0;
             
         } catch (SQLException ex) {
             return false;

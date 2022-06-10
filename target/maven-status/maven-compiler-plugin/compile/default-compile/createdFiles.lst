@@ -1,0 +1,6 @@
+com\nekixitodev\crudjspbiblioteca\dao\CategoriaDao.class
+com\nekixitodev\crudjspbiblioteca\dao\Conexion.class
+com\nekixitodev\crudjspbiblioteca\model\Libro.class
+com\nekixitodev\crudjspbiblioteca\controller\CategoriaController.class
+com\nekixitodev\crudjspbiblioteca\model\Categoria.class
+com\nekixitodev\crudjspbiblioteca\model\Editorial.class

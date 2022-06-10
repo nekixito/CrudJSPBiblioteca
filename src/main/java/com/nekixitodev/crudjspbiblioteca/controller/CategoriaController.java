@@ -4,6 +4,8 @@
  */
 package com.nekixitodev.crudjspbiblioteca.controller;
 
+import com.nekixitodev.crudjspbiblioteca.dao.CategoriaDao;
+import com.nekixitodev.crudjspbiblioteca.model.Categoria;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -69,7 +71,19 @@ public class CategoriaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        String nombre = request.getParameter("nombre");
+        //String password = request.getParameter("password");
+        Categoria cat = new Categoria();
+        cat.setNombre(nombre);
+        
+        if (CategoriaDao.registrar(cat)) {
+            request.setAttribute("mensaje", "La categoría fue registrada.");
+        }else{
+            request.setAttribute("mensaje", "La categoría NO fue registrada.");
+        }
+        
+        request.getRequestDispatcher("registroCategoria.jsp").forward(request, response);
     }
 
     /**
