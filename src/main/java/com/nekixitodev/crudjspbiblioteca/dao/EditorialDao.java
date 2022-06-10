@@ -64,7 +64,7 @@ public class EditorialDao {
                 telefono = resultado.getString("telefono");
                 direccion = resultado.getString("direccion");
                 email = resultado.getString("email");
-                sitioWeb = resultado.getString("");
+                sitioWeb = resultado.getString("sitioweb");
                 
                 editorial = new Editorial();
                 editorial.setNit(nit);
