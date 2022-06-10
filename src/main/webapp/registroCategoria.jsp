@@ -174,9 +174,7 @@
                                                     Registrar
                                                 </button>
                                                 
-                                                <div>
-                                                    <%=request.getAttribute("nombre")%>
-                                                </div>
+                                                
                                                 
                                                 <div>
                                                     <%=(request.getAttribute("mensaje")!=null?request.getAttribute("mensaje"):"") %>
