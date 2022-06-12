@@ -160,7 +160,7 @@
                                                     </label>
                                                 
                                                     <div class="col-sm-9 ">
-                                                        <input type="text" name="isbn" value="" placeholder="ISBN del Libro" />
+                                                        <input type="text" name="isbn"  placeholder="ISBN del Libro" />
                                                     </div>
                                                 </div>
                                                 
@@ -170,7 +170,7 @@
                                                     </label>
                                                 
                                                     <div class="col-sm-9 ">
-                                                        <input type="text" name="titulo" value="" placeholder="Título del Libro" />
+                                                        <input type="text" name="titulo"  placeholder="Título del Libro" />
                                                     </div>
                                                 </div>
                                                 
@@ -182,7 +182,7 @@
                                                     </label>
                                                 
                                                     <div class="col-sm-9 ">
-                                                        <input type="text" name="autor" value="" placeholder="Nombre completo del Autor" />
+                                                        <input type="text" name="autor"  placeholder="Nombre completo del Autor" />
                                                     </div>
                                                 </div>
                                                 
@@ -192,7 +192,7 @@
                                                     </label>
                                                 
                                                     <div class="col-sm-9 ">
-                                                        <input type="text" name="fechaPublicación" value="" placeholder="2022-12-24" />
+                                                        <input type="text" name="publicacion" placeholder="2022-12-24" />
                                                     </div>
                                                 </div>
                                                 

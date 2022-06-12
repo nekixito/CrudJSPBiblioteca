@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class Conexion {
     public static Connection conectar(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca", "root", "");
         } catch (ClassNotFoundException ex) {
             return null;

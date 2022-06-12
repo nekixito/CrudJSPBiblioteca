@@ -1,9 +1,14 @@
 <%-- 
     Document   : Libros
     Created on : 08-junio-2022
-    Author     : Christian Gámez
+    Author     : Miguel Nequiz
 --%>
 
+<%@page import="com.nekixitodev.crudjspbiblioteca.model.Editorial"%>
+<%@page import="com.nekixitodev.crudjspbiblioteca.dao.EditorialDao"%>
+<%@page import="com.nekixitodev.crudjspbiblioteca.dao.CategoriaDao"%>
+<%@page import="com.nekixitodev.crudjspbiblioteca.dao.LibroDao"%>
+<%@page import="com.nekixitodev.crudjspbiblioteca.model.Libro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -179,18 +184,19 @@
                                                 </thead>
 
                                                 <tbody>
+                                                    
+                                                    <% for (Libro libro : LibroDao.listar()) { %>
                                                     <tr>
 
                                                         <td>
-                                                            <a href="#">1254-3256-9856-652</a>
+                                                            <a href="#"><%= libro.getIsbn() %></a>
                                                         </td>
-                                                        <td class="hidden-480">Introducción a desarrollo web con JSP</td>
-                                                        <td>Christian Gámez</td>
-
-                                                        <td>2017-12-31</td>
-                                                        <td><span class="label label-sm label-success">Planeta</span></td>
+                                                        <td class="hidden-480"><%= libro.getTitulo() %></td>
+                                                        <td><%= libro.getNombreAutor() %></td>
+                                                        <td><%= libro.getPublicacion() %></td>
+                                                        <td><span class="label label-sm label-success"><%= EditorialDao.getEditorial(libro.getNitEditorial())%></span></td>
                                                         <td>
-                                                            <span class="label label-sm label-success">Matemáticas</span>
+                                                            <span class="label label-sm label-success"><%= CategoriaDao.getCategoria(libro.getCodigoCategoria()) %></span>
                                                         </td>
 
                                                         <td>
@@ -244,10 +250,13 @@
                                                         </td>
                                                     </tr>
 
-
+                                                <% } %>
                                                 </tbody>
                                             </table>
                                         </div>
+                                                
+                                        
+                                        
 
                                         <div class="modal-footer no-margin-top">
                                             <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">

@@ -23,7 +23,7 @@ public class CategoriaDao {
         
         
         try {
-            String sql = "INSERT INTO categorias (nombre) VALUES (?);";
+            String sql = "INSERT INTO categorias (nombre) VALUES (?)";
             Connection con = Conexion.conectar();
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, categoria.getNombre());
@@ -32,6 +32,8 @@ public class CategoriaDao {
             } else {
                 return false;
             }
+            
+            
             
         } catch (SQLException ex) {
             return false;
@@ -42,7 +44,7 @@ public class CategoriaDao {
         
         
         try {
-            String sql = "SELECT * FROM categorias;";
+            String sql = "SELECT * FROM categorias";
             Connection con = Conexion.conectar();
             PreparedStatement st = con.prepareStatement(sql);
             ResultSet resultado = st.executeQuery(sql);
@@ -67,6 +69,26 @@ public class CategoriaDao {
             return listaCategorias;
         } catch (SQLException ex) {
             return null;
+        }
+    }
+    
+    public static String getCategoria(int codigoCategoria){
+        try {
+            String sql = "SELECT nombre FROM categorias WHERE codigo=?";
+            Connection con = Conexion.conectar();
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setInt(1, codigoCategoria);
+            ResultSet resultado = st.executeQuery();
+            
+            if (resultado.next()) {
+                return resultado.getString("nombre");
+            }
+            
+            return "--";
+            
+        
+        } catch (SQLException ex) {
+            return "--";
         }
     }
 }

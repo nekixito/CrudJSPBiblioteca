@@ -20,7 +20,7 @@ public class EditorialDao {
         
         
         try {
-            String sql = "INSERT INTO editoriales (nit, nombre, telefono, direccion, email, sitioweb) VALUES (?,?,?,?,?,?);";
+            String sql = "INSERT INTO editoriales (nit, nombre, telefono, direccion, email, sitioweb) VALUES (?,?,?,?,?,?)";
             Connection con = Conexion.conectar();
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, editorial.getNit());
@@ -36,16 +36,18 @@ public class EditorialDao {
                 return false;
             }
             
+            
         } catch (SQLException ex) {
             return false;
         }
+        
     }
     
     public static ArrayList<Editorial> listar(){
         
         
         try {
-            String sql = "SELECT * FROM editoriales;";
+            String sql = "SELECT * FROM editoriales";
             Connection con = Conexion.conectar();
             PreparedStatement st = con.prepareStatement(sql);
             ResultSet resultado = st.executeQuery(sql);
@@ -82,6 +84,27 @@ public class EditorialDao {
             return listaEditorial;
         } catch (SQLException ex) {
             return null;
+        }
+    }
+    
+    public static String getEditorial(String nitCategoria){
+        try {
+            String sql = "SELECT nombre FROM editoriales WHERE nit=? ";
+            Connection con = Conexion.conectar();
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, nitCategoria);
+            ResultSet resultado = st.executeQuery();
+            
+            if (resultado.next()) {
+                return resultado.getString("nombre");
+            }
+                
+            return "--";
+           
+            
+            
+        } catch (SQLException ex) {
+            return "--";
         }
     }
 }
