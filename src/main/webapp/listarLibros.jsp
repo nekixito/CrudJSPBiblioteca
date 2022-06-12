@@ -57,14 +57,7 @@
 
 
                 <ul class="nav nav-list">
-                    <li class="">
-                        <a href="index.jsp">
-                            <i class="menu-icon fa fa-tachometer"></i>
-                            <span class="menu-text"> Inicio </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
+                    
 
                     <li class="active open">
                         <a href="#" class="dropdown-toggle">
@@ -122,19 +115,6 @@
 
             <div class="main-content">
                 <div class="main-content-inner">
-                    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
-                        <ul class="breadcrumb">
-                            <li>
-                                <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="#">Inicio</a>
-                            </li>
-
-
-                        </ul><!-- /.breadcrumb -->
-
-
-                    </div>
-
                     <div class="page-content">
 
                         <div class="page-header">
