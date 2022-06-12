@@ -174,15 +174,7 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label no-padding-right">
-                                                        Descripción:
-                                                    </label>
                                                 
-                                                    <div class="col-sm-9 ">
-                                                        <input type="text" name="descripcion" value="" placeholder="Descripción del Libro" />
-                                                    </div>
-                                                </div>
                                                 
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label no-padding-right">
@@ -236,17 +228,28 @@
                                                     </div>
                                                 </div>
                                                 
-                                                <button name="accion" class="btn btn-success" type="submit">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label no-padding-right">
+                                                        Descripción:
+                                                    </label>
+                                                    
+                                                    <div class="col-sm-9 ">
+                                                        <textarea name="descripcion" rows="4" cols="20"></textarea>
+                                                    </div>
+                                                    
+                                                </div>
+                                                        
+                                                        <button name="accion" class="btn btn-success" type="submit" value="registrar">
                                                     <i class="fa fa-save"></i>
                                                     Registrar
                                                 </button>
                                                 
-                                                <button name="accion" class="btn btn-warning" type="submit">
+                                                        <button name="accion" class="btn btn-warning" type="submit" value="actualizar">
                                                     <i class="fa fa-edit"></i>
                                                     Actualizar
                                                 </button>
                                                 
-                                                <button name="accion" class="btn btn-danger" type="submit">
+                                                <button name="accion" class="btn btn-danger" type="submit" value="eliminar">
                                                     <i class="fa fa-eraser"></i>
                                                     Eliminar
                                                 </button>

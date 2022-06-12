@@ -71,7 +71,7 @@ public class LibroDao {
     
     public static boolean actualizar(Libro libro){      
         try {
-            String sql = "UPDATE libro SET " +
+            String sql = "UPDATE libros SET " +
                 "	titulo = ?," +
                 "	descripcion = ?," +
                 "	nombre_autor = ?," +

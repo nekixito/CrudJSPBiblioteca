@@ -4,6 +4,8 @@
  */
 package com.nekixitodev.crudjspbiblioteca.controller;
 
+import com.nekixitodev.crudjspbiblioteca.dao.LibroDao;
+import com.nekixitodev.crudjspbiblioteca.model.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -69,7 +71,52 @@ public class LibroController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String isbn = request.getParameter("isbn");
+        String titulo = request.getParameter("titulo");
+        String autor = request.getParameter("autor");
+        String publicacion = request.getParameter("publicacion");
+        int categoria = Integer.parseInt(request.getParameter("categoria"));
+        String editorial = request.getParameter("editorial");
+        String descripcion = request.getParameter("descripcion");
+        String accion = request.getParameter("accion").toLowerCase();
+        
+        Libro libro = new Libro();
+        
+        libro.setIsbn(isbn);
+        libro.setTitulo(titulo);
+        libro.setNombreAutor(autor);
+        libro.setPublicacion(publicacion);
+        libro.setCodigoCategoria(categoria);
+        libro.setNitEditorial(editorial);
+        libro.setDescripcion(descripcion);
+        
+        if(accion.equals("registrar")){
+            if(LibroDao.registrar(libro)){
+                request.setAttribute("mensaje", "Libro registrado");
+            }else{
+                request.setAttribute("mensaje", "Libro NO registrado");
+            }
+        
+        }else if(accion.equals("actualizar")){
+            if(LibroDao.actualizar(libro)){
+                request.setAttribute("mensaje", "Libro actualizado");
+            }else{
+                request.setAttribute("mensaje", "Libro NO actualizado");
+            }
+        
+        }else if(accion.equals("eliminar")){
+            if(LibroDao.eliminar(libro)){
+                request.setAttribute("mensaje", "Libro eliminado");
+            }else{
+                request.setAttribute("mensaje", "Libro NO eliminado");
+            }
+        }else{
+            request.setAttribute("mensaje", "Accion desconocida.");
+        }
+        
+        
+        request.getRequestDispatcher("registroLibro.jsp").forward(request, response);
     }
 
     /**
