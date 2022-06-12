@@ -132,15 +132,7 @@
                                         <!-- div.dataTables_borderWrap -->
                                         <div>
                                             <form action="CategoriaController" method="post" class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label no-padding-right">
-                                                        Código:
-                                                    </label>
                                                 
-                                                    <div class="col-sm-9 ">
-                                                        <input type="text" name="codigo" value="" placeholder="Código de la Categoría" />
-                                                    </div>
-                                                </div>
                                                 
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label no-padding-right">
